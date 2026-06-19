@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import heroPowerliftingGym from "./assets/images/hero_powerlifting_gym_1781873316807.jpg";
+import competitionBarbell from "./assets/images/competition_barbell_1781873332982.jpg";
 import { 
   motion, 
   AnimatePresence 
@@ -591,7 +593,7 @@ export default function App() {
                   {/* Primary generated atmospheric gym image */}
                   <div className="aspect-[4/3] bg-neutral-900 relative">
                     <img 
-                      src="/src/assets/images/hero_powerlifting_gym_1781873316807.jpg" 
+                      src={heroPowerliftingGym} 
                       alt="Gimnasio IPower Strength en Ciudad Real con equipamiento oficial"
                       className="w-full h-full object-cover object-center filter saturate-[1.1] brightness-[0.85]"
                       referrerPolicy="no-referrer"
@@ -703,7 +705,7 @@ export default function App() {
                   </div>
                   <div className="aspect-[4/3] relative">
                     <img 
-                      src="/src/assets/images/competition_barbell_1781873332982.jpg" 
+                      src={competitionBarbell} 
                       alt="Material oficial de powerlifting y halterofilia en Ciudad Real"
                       className="w-full h-full object-cover object-center filter saturate-[1.05] brightness-90"
                       referrerPolicy="no-referrer"
