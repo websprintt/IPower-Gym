@@ -1,0 +1,6 @@
+{
+  "name": "IPower Strength",
+  "description": "Gimnasio de alto rendimiento 24/7 en Ciudad Real. Plazas limitadas. Entrena como un atleta, progresa como un pro.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

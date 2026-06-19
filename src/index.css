@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Outfit", sans-serif;
+  
+  --color-brand-gold: #FF011A;       /* Ultra-vibrant aggressive high-performance athletic Red (like Eleiko/Rogue) */
+  --color-brand-yellow: #FF4D5F;     /* High-visibility pure light-red accent */
+  --color-brand-dark: #070709;       /* Matte rich athletic dark black */
+  --color-brand-card: #0F0F13;       /* Premium textured space-charcoal card */
+  --color-brand-border: #2D1416;     /* Subtle red-tinted structural dark border */
+}
+
+/* Base style resets */
+html {
+  scroll-behavior: smooth;
+  background-color: var(--color-brand-dark);
+  color: #F4F4F7;
+  font-family: var(--font-sans);
+}
+
+/* Premium Glassmorphism classes */
+.glass-premium {
+  background: rgba(15, 15, 19, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 1, 26, 0.15);
+}
+
+.glass-premium-hover {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.glass-premium-hover:hover {
+  background: rgba(255, 1, 26, 0.05);
+  border-color: rgba(255, 1, 26, 0.35);
+  box-shadow: 0 10px 30px -10px rgba(255, 1, 26, 0.25);
+  transform: translateY(-2px);
+}
+
+/* Custom scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #070709;
+}
+::-webkit-scrollbar-thumb {
+  background: #251819;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #FF011A;
+}
+
+/* Accent glowing effects */
+.glow-gold {
+  box-shadow: 0 0 25px rgba(255, 1, 26, 0.35);
+}
+
+.glow-subtle {
+  box-shadow: 0 0 40px rgba(255, 1, 26, 0.08);
+}
+
+/* Shiny loop effect on buttons */
+.shine-effect {
+  position: relative;
+  overflow: hidden;
+}
+
+.shine-effect::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -60%;
+  width: 30%;
+  height: 200%;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.4) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: rotate(30deg);
+  animation: shine-loop 3.5s infinite ease-in-out;
+}
+
+@keyframes shine-loop {
+  0% {
+    left: -70%;
+  }
+  15%, 100% {
+    left: 120%;
+  }
+}
+
+/* Mobile thumb touch-target enhancement */
+.btn-touch-target {
+  min-height: 48px;
+  min-width: 48px;
+}
+
+/* Map visual custom overlay dark */
+.leaflet-container {
+  background-color: #070709 !important;
+  border-radius: 12px;
+}
