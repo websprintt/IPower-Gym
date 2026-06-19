@@ -1,9 +1,89 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Google AI Studio App</title>
+    
+    <!-- SEO Básico -->
+    <title>IPower Strength Ciudad Real | Club de Fuerza & Gimnasio 24 Horas</title>
+    <meta name="description" content="El primer club y gimnasio de entrenamiento de fuerza y Powerlifting 24 horas en Ciudad Real. Equipamiento oficial de alta gama, acceso inteligente e inscripciones limitadas." />
+    <meta name="keywords" content="gimnasio ciudad real, powerlifting ciudad real, gimnasio 24 horas ciudad real, ipower strength, club de fuerza, entrenamiento de fuerza, musculación, tarifas gimnasio, halterofilia" />
+    <meta name="author" content="IPower Strength" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph / Facebook / WhatsApp -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="IPower Strength Ciudad Real | Club de Fuerza & Gimnasio 24 Horas" />
+    <meta property="og:description" content="🔥 Tu templo de la fuerza en Ciudad Real abierto 24 horas al día. Equipamiento de alta gama certificado, acceso inteligente total y comunidad real. ¡Apúntate ya!" />
+    <meta property="og:image" content="hero_preview.jpg" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="900" />
+    <meta property="og:image:alt" content="Gimnasio IPower Strength Ciudad Real" />
+    <meta property="og:site_name" content="IPower Strength" />
+    <meta property="og:url" content="" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="IPower Strength Ciudad Real | Gimnasio 24H" />
+    <meta name="twitter:description" content="Gimnasio de fuerza 24 horas con equipamiento de competición en Ciudad Real." />
+    <meta name="twitter:image" content="hero_preview.jpg" />
+
+    <!-- Favicon e branding -->
+    <link rel="icon" type="image/jpeg" href="hero_preview.jpg" />
+
+    <!-- Script de adaptabilidad dinámica para paths absolutos en cualquier hosting (GitHub Pages, etc) -->
+    <script>
+      (function() {
+        const updateSeoPaths = () => {
+          // Obtener base URL actual
+          const href = window.location.href;
+          const origin = window.location.origin;
+          
+          // Reemplazar o crear link canonical
+          let canonical = document.querySelector("link[rel='canonical']");
+          if (!canonical) {
+            canonical = document.createElement("link");
+            canonical.setAttribute("rel", "canonical");
+            document.head.appendChild(canonical);
+          }
+          canonical.setAttribute("href", href);
+
+          // Establecer og:url absoluta
+          const ogUrl = document.querySelector("meta[property='og:url']");
+          if (ogUrl) {
+            ogUrl.setAttribute("content", href);
+          }
+
+          // Resolver og:image a URL absoluta (crucial para whatsapp scraper)
+          const ogImg = document.querySelector("meta[property='og:image']");
+          if (ogImg) {
+            const currentImgPath = ogImg.getAttribute("content");
+            if (!currentImgPath.startsWith("http")) {
+              // Obtener path absoluto relativo a la ubicación actual de la página para soportar subcarpetas en GitHub Pages
+              const absoluteImgUrl = new URL(currentImgPath, window.location.href).href;
+              ogImg.setAttribute("content", absoluteImgUrl);
+            }
+          }
+
+          // Resolver twitter:image a URL absoluta
+          const twitterImg = document.querySelector("meta[name='twitter:image']");
+          if (twitterImg) {
+            const currentImgPath = twitterImg.getAttribute("content");
+            if (!currentImgPath.startsWith("http")) {
+              const absoluteImgUrl = new URL(currentImgPath, window.location.href).href;
+              twitterImg.setAttribute("content", absoluteImgUrl);
+            }
+          }
+        };
+
+        if (document.readyState === "loading") {
+          document.addEventListener("DOMContentLoaded", updateSeoPaths);
+        } else {
+          updateSeoPaths();
+        }
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>

@@ -5,7 +5,7 @@ import {defineConfig} from 'vite';
 
 export default defineConfig(() => {
   return {
-    base: "/IPower-Gym/",
+    base: "./",
     plugins: [react(), tailwindcss()],
     resolve: {
       alias: {
